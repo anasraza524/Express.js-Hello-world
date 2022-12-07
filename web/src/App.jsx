@@ -56,17 +56,17 @@ Weather Web
     
         {(weatherData === null) ? null :
                 <div>
-  <Typography variant='h5' color='skyblue'> 
+  <Typography variant='h5' > 
   City: {weatherData?.city}
-</Typography>  <Typography variant='h6' color='skyblue'> 
+</Typography>  <Typography variant='h6' > 
 Temperature: {Math.round(weatherData?.temp)}°C
-</Typography>  <Typography variant='p' color='skyblue'> 
+</Typography>  <Typography variant='h6' > 
 min: {Math.round(weatherData?.min)}°C
-</Typography>  <Typography variant='p' color='skyblue'> 
+</Typography>  <Typography variant='h6' > 
 max: {Math.round(weatherData?.max)}°C
-</Typography>  <Typography variant='p' color='skyblue'> 
+</Typography>  <Typography variant='h6' > 
 humidity: {Math.round(weatherData?.humidity)}°C
-</Typography>  <Typography variant='p' color='skyblue'> 
+</Typography>  <Typography variant='h6' > 
 
 </Typography>
                    
