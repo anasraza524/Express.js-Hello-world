@@ -47,10 +47,10 @@ app.get('/weather/:cityName', (req, res) => {
       serverTime: new Date().toString()
   });
 })
-app.get('/', (req, res) => {
-    console.log('requsret come from:' + new Date().toString())
-  res.send('Respone From Anas Raza!')
-})
+// app.get('/', (req, res) => {
+//     console.log('requsret come from:' + new Date().toString())
+//   res.send('Respone From Anas Raza!')
+// })
 
 
 const __dirname = path.resolve();
