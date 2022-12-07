@@ -1,7 +1,8 @@
 
 import { useState } from "react"
 import axios from "axios";
-import {Typography,Card,CardContent} from '@mui/material';
+import {Typography,Card,CardContent,
+TextField,Button,Paper} from '@mui/material';
 
 let baseUrl = ``;
 if (window.location.href.split(":")[0] === "http") {
@@ -31,14 +32,23 @@ function App() {
 
     return (
         <div>
-<Card sx={{ maxWidth: 500,height:300 }}>
+           
+            <Typography variant="h2" color="skyblue" sx={{ml:10}}>
+Weather Web
+            </Typography>
+<Card sx={{ maxWidth: 600,height:300,ml:10 }}>
     <CardContent>
     <form onSubmit={submitHandler}>
                 City Name:
-                <input type="text" placeholder="enter your city name" required
-                    onChange={(e) => { setCityName(e.target.value) }} />
+                <TextField 
+                sx={{pl:5,pr:5}}
+                 size="small"
+                type="text" placeholder="enter your city name" required
+                onChange={(e) => { setCityName(e.target.value) }}>
 
-                <button type="submit">get weather</button>
+                </TextField>
+              
+                <Button variant="outlined">get </Button>
             </form>
         <Typography variant='h3' color='skyblue'> 
 
@@ -46,17 +56,17 @@ function App() {
     
         {(weatherData === null) ? null :
                 <div>
-  <Typography variant='h3' color='skyblue'> 
+  <Typography variant='h5' color='skyblue'> 
   City: {weatherData?.city}
-</Typography>  <Typography variant='h3' color='skyblue'> 
+</Typography>  <Typography variant='h6' color='skyblue'> 
 Temperature: {Math.round(weatherData?.temp)}°C
-</Typography>  <Typography variant='h3' color='skyblue'> 
+</Typography>  <Typography variant='p' color='skyblue'> 
 min: {Math.round(weatherData?.min)}°C
-</Typography>  <Typography variant='h3' color='skyblue'> 
+</Typography>  <Typography variant='p' color='skyblue'> 
 max: {Math.round(weatherData?.max)}°C
-</Typography>  <Typography variant='h3' color='skyblue'> 
+</Typography>  <Typography variant='p' color='skyblue'> 
 humidity: {Math.round(weatherData?.humidity)}°C
-</Typography>  <Typography variant='h3' color='skyblue'> 
+</Typography>  <Typography variant='p' color='skyblue'> 
 
 </Typography>
                    
@@ -69,10 +79,8 @@ humidity: {Math.round(weatherData?.humidity)}°C
 
 </Card>
             
-            <br />
-            <br />
-
-           
+         
+            
         </div>
     );
 }
