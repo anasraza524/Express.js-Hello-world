@@ -48,7 +48,7 @@ Weather Web
 
                 </TextField>
               
-                <Button variant="outlined">get </Button>
+                <Button type="submit" variant="outlined">get </Button>
             </form>
         <Typography variant='h3' color='skyblue'> 
 
@@ -56,7 +56,7 @@ Weather Web
     
         {(weatherData === null) ? null :
                 <div>
-  <Typography variant='h5' > 
+  <Typography variant='h5' sx={{mt:3}} > 
   City: {weatherData?.city}
 </Typography>  <Typography variant='h6' > 
 Temperature: {Math.round(weatherData?.temp)}°C
