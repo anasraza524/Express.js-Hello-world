@@ -1,11 +1,11 @@
 
 import { useState } from "react"
 import axios from "axios";
-
+import {Typography,Card,CardContent} from '@mui/material';
 
 let baseUrl = ``;
 if (window.location.href.split(":")[0] === "http") {
-    baseUrl = `http://localhost:5001`;
+    baseUrl = `http://localhost:3000`;
 }
 
 
@@ -31,31 +31,48 @@ function App() {
 
     return (
         <div>
-
-            <form onSubmit={submitHandler}>
+<Card sx={{ maxWidth: 500,height:300 }}>
+    <CardContent>
+    <form onSubmit={submitHandler}>
                 City Name:
                 <input type="text" placeholder="enter your city name" required
                     onChange={(e) => { setCityName(e.target.value) }} />
 
                 <button type="submit">get weather</button>
             </form>
-            <br />
-            <br />
+        <Typography variant='h3' color='skyblue'> 
 
-            {(weatherData === null) ? null :
+        </Typography>
+    
+        {(weatherData === null) ? null :
                 <div>
+  <Typography variant='h3' color='skyblue'> 
+  City: {weatherData?.city}
+</Typography>  <Typography variant='h3' color='skyblue'> 
+Temperature: {Math.round(weatherData?.temp)}°C
+</Typography>  <Typography variant='h3' color='skyblue'> 
+min: {Math.round(weatherData?.min)}°C
+</Typography>  <Typography variant='h3' color='skyblue'> 
+max: {Math.round(weatherData?.max)}°C
+</Typography>  <Typography variant='h3' color='skyblue'> 
+humidity: {Math.round(weatherData?.humidity)}°C
+</Typography>  <Typography variant='h3' color='skyblue'> 
 
-                    City: {weatherData?.city}
-                    <br />
-                    Temperature: {Math.round(weatherData?.temp)}°C
-                    <br />
-                    min: {Math.round(weatherData?.min)}°C
-                    <br />
-                    max: {Math.round(weatherData?.max)}°C
-                    <br />
-                    humidity: {Math.round(weatherData?.humidity)}°C
+</Typography>
+                   
+                 
+                  
                 </div>
             }
+    </CardContent>
+
+
+</Card>
+            
+            <br />
+            <br />
+
+           
         </div>
     );
 }
